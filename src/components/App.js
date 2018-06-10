@@ -7,10 +7,10 @@ function ShowTasks(props) {
       {props.list.map((task) => {
         keyNumber += 1;
         return (
-          <div className='task-group' key={keyNumber}>
+          <div className='task-group' id={keyNumber} key={keyNumber}>
             <div className='taskNumber'>Task #{keyNumber}</div>
             <div className='task'>{task}</div>
-            <div className='removeTask'>X</div>
+            <div className='removeTask' onClick={props.handleDeleteTask}>X</div>
           </div>
         )
       }
@@ -41,6 +41,7 @@ class App extends Component {
     this.handleAddTask = this.handleAddTask.bind(this);
     this.handleClearAllTasks = this.handleClearAllTasks.bind(this);
     this.handleResetAllTasks = this.handleResetAllTasks.bind(this);
+    this.handleDeleteTask = this.handleDeleteTask.bind(this);
   }
 
   handleAddTask(event) {
@@ -65,6 +66,13 @@ class App extends Component {
     })
   }
 
+  handleDeleteTask(event) {
+    let index = event.target.parentElement.id - 1;
+    this.setState({
+      tasks: this.state.tasks.slice(0, index).concat(this.state.tasks.slice(index + 1))
+    })
+  }
+
   render() {
     return (
       <div className='container'>
@@ -81,7 +89,7 @@ class App extends Component {
           </div>
           <div>
             <h3>Task List</h3>
-            <ShowTasks list={this.state.tasks}/>
+            <ShowTasks list={this.state.tasks} handleDeleteTask={this.handleDeleteTask}/>
             <div className='task-buttons'>
               <button onClick={this.handleClearAllTasks}>Clear All Tasks</button>
               <button onClick={this.handleResetAllTasks}>Reset All Tasks</button>

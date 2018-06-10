@@ -104,11 +104,11 @@ html, body {
 }
 
 .removeTask {
-  flex-basis: 25%;
+  flex-basis: 5%;
   text-align: right;
 }
 
 .task {
-  flex-basis: 50%;
+  flex-basis: 70%;
   text-align: left;
 }
