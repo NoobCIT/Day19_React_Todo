@@ -1,5 +1,114 @@
+/* === GLOBAL === */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 1px;
+}
+
+html, body {
+  height: 100%;
+  background-color: #74b9ff;
+}
+
+#root {
+  width: 400px;
+  margin: 20px auto;
+}
+
+.container {
+  text-align: center;
+  border: 2px solid #636e72;
+  box-shadow: 12px 12px 12px #2d3436;
+  margin-left: 6px;
+  margin-right: 36px;
+}
+
+.main {
+  background-color: #fab1a0;
+  padding-bottom: 24px;
+}
+
+/* === HEADING === */
+
+.title {
+  padding: 12px;
+  background-color: #ffeaa7;
+}
+
+.title h3 {
+  margin: 12px;
+}
+
+/* === FORM === */
+
+.form-group {
+  padding: 12px;
+}
+
+.form-group input {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border: 2px solid #636e72;
+}
+
+.form-group button {
+  width: 250px;
+  margin: 6px;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #74b9ff;
+  border: 1px solid #0c2461;
+}
+
+.form-group button:hover {
+  color: #ffffff;
+  background-color: #0984e3;
+}
+
+/* === TASKS FUNCTION === */
+
+.task-buttons button {
+  margin: 12px;
+  width: 140px;
+  height: 24px;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #2d3436;
+  color: #ffffff;
+  border: none;
+}
+.task-buttons button:hover {
+  background-color: #ffffff;
+  color: #2d3436;
+}
+
+/* === TASK ITEMS === */
+
+.task-group {
+  display: flex;
+  margin: 24px;
+}
+
+.taskNumber {
+  flex-basis: 25%;
+  text-align: left;
+}
+
+.removeTask {
+  flex-basis: 25%;
+  text-align: right;
+}
+
+.task {
+  flex-basis: 50%;
+  text-align: left;
 }
